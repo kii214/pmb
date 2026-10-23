@@ -81,12 +81,21 @@
                                 </ul>
                             </li>
                         </ul>
-                        <div class="nav-actions d-flex align-items-center gap-2 pt-3 pt-xl-0 border-top border-xl-0 mt-2 mt-xl-0 flex-nowrap flex-shrink-0 ms-xl-2">
                             @auth
-                                @if(auth()->user()->role !== 'admin' && !request()->routeIs('dashboard'))
-                                    <a href="{{ route('dashboard') }}" class="btn-nav-register text-nowrap"><i class="bi bi-person-circle me-1"></i> Dashboard</a>
-                                @elseif(auth()->user()->role === 'admin')
-                                    <a href="{{ route('applications.create') }}" class="btn-nav-register text-nowrap"><i class="bi bi-pencil-square me-1"></i> Daftar Sekarang</a>
+                                @if(auth()->user()->role === 'admin')
+                                    <a href="{{ route('admin.dashboard') }}" class="btn-nav-register text-nowrap" style="background:#0f2c59; border-color:#0f2c59;">
+                                        <i class="bi bi-speedometer2 me-1"></i> Panel Admin
+                                    </a>
+                                    <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-danger btn-sm rounded-pill px-3 ms-1 fw-bold">Logout</button>
+                                    </form>
+                                @else
+                                    <a href="{{ route('dashboard') }}" class="btn-nav-register text-nowrap"><i class="bi bi-person-circle me-1"></i> Dashboard Saya</a>
+                                    <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-secondary btn-sm rounded-pill px-3 ms-1">Logout</button>
+                                    </form>
                                 @endif
                             @else
                                 <a href="{{ route('login') }}" class="btn-nav-login text-nowrap"><i class="bi bi-box-arrow-in-right me-1"></i> Login</a>

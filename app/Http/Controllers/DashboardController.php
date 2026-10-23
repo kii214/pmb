@@ -10,6 +10,12 @@ class DashboardController extends Controller
     public function index()
     {
         $user = Auth::user();
+
+        // JIKA ADMIN: Lempar langsung ke Dashboard Admin, bukan dashboard camaba!
+        if ($user && $user->role === 'admin') {
+            return redirect()->route('admin.dashboard');
+        }
+
         $application = Application::with(['programStudy', 'registrationWave'])->where('user_id', $user->id)->first();
         $setting = \App\Models\ContactSetting::first();
         
