@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="UnHOhOdVPwPYnc2ronXROVS43BOBkwROLnqZMi0K">
+        <meta name="description" content="Portal Penerimaan Mahasiswa Baru STMIK ROSMA - Kampus Teknologi Terkemuka di Karawang">
+        <meta name="theme-color" content="#2563EB">
+        <link rel="manifest" href="http://127.0.0.1:8000/manifest.json">
+        <link rel="apple-touch-icon" href="http://127.0.0.1:8000/images/logo-rosma.png">
+        <link rel="icon" type="image/png" href="http://127.0.0.1:8000/images/logo-rosma.png">
+        <title>PMB STMIK ROSMA - Penerimaan Mahasiswa Baru</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <!-- AOS Animation CSS -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="preload" as="style" href="http://127.0.0.1:8000/build/assets/app-B0zSkXmB.css" /><link rel="modulepreload" as="script" href="http://127.0.0.1:8000/build/assets/app-WC-ZjLzv.js" /><link rel="stylesheet" href="http://127.0.0.1:8000/build/assets/app-B0zSkXmB.css" /><script type="module" src="http://127.0.0.1:8000/build/assets/app-WC-ZjLzv.js"></script>        <style>
+/* ===================== HERO CAROUSEL ===================== */
+.hero-slide {
+    position: relative;
+    width: 100%;
+    min-height: 85vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+.hero-slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.75) 40%, rgba(15,23,42,0.3) 100%);
+    z-index: 1;
+}
+.hero-slide-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.hero-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(37,99,235,0.2);
+    border: 1px solid rgba(59,130,246,0.3);
+    color: #93c5fd;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+.hero-highlight {
+    color: #f59e0b;
+}
+.hero-desc {
+    font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+.btn-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid #2563eb;
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+}
+.btn-hero-cta:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.6);
+    color: #fff;
+}
+.btn-hero-cta:hover .btn-arrow-slide {
+    transform: translateX(4px);
+}
+.btn-arrow-slide {
+    transition: transform 0.2s ease;
+}
+
+.btn-hero-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.25);
+}
+.btn-hero-ghost:hover {
+    background: rgba(255,255,255,0.2);
+    border-color: #fff;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* ===================== FLOATING SHOWCASE & ANIMATIONS ===================== */
+.badge-pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    animation: pulseDot 2s infinite;
+}
+@keyframes pulseDot {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.hero-pill {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.hero-visual-wrapper {
+    position: relative;
+    padding: 20px;
+}
+.hero-glow-orb {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, rgba(37, 99, 235, 0.1) 60%, transparent 80%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    filter: blur(40px);
+    z-index: 1;
+    animation: orbGlow 8s ease-in-out infinite alternate;
+}
+@keyframes orbGlow {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.9; }
+}
+
+.hero-image-frame {
+    position: relative;
+    z-index: 2;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transform: perspective(1000px) rotateY(-4deg) rotateX(2deg);
+    transition: transform 0.4s ease;
+}
+.hero-image-frame:hover {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02);
+}
+.hero-main-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+}
+.hero-image-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(15, 23, 42, 0.85) 100%);
+}
+.hero-frame-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 24px;
+    z-index: 3;
+}
+
+/* Floating Glass Cards */
+.floating-glass-card {
+    position: absolute;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+}
+.fgc-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+.fgc-title {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+}
+.fgc-sub {
+    font-size: 0.72rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.card-float-1 {
+    top: -10px;
+    right: -15px;
+    animation: floatSlow 4.5s ease-in-out infinite;
+}
+.card-float-2 {
+    bottom: 25px;
+    left: -20px;
+    animation: floatReverse 5s ease-in-out infinite 0.5s;
+}
+.card-float-3 {
+    top: 50%;
+    right: -25px;
+    animation: floatSlow 5.5s ease-in-out infinite 1.2s;
+}
+
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+@keyframes floatReverse {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(10px); }
+}
+
+/* ===================== TENTANG STMIK ROSMA SECTION ===================== */
+.rosma-about-section {
+    background: #ffffff;
+    border-bottom: 1px solid #f1f5f9;
+}
+.stat-item-box {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.stat-item-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -6px rgba(0,0,0,0.08) !important;
+}
+.stat-icon-wrap {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.about-visual-grid .grid-img-main {
+    max-height: 420px;
+}
+.about-visual-grid .grid-img-main img {
+    height: 420px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.about-visual-grid .grid-img-main:hover img {
+    transform: scale(1.04);
+}
+.img-badge-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+.feature-pillar-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 1px solid #e2e8f0 !important;
+}
+.feature-pillar-card:hover {
+    transform: translateY(-6px);
+    border-color: #3b82f6 !important;
+    box-shadow: 0 20px 30px -10px rgba(59, 130, 246, 0.15) !important;
+}
+.pillar-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===================== PARTNERS ===================== */
+.partners-section {
+    padding: 40px 0;
+    background: #fff;
+    border-bottom: 1px solid #f1f5f9;
+}
+.partners-label {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+.partners-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+.partners-row:hover {
+    opacity: 1;
+}
+.partner-item img {
+    height: 45px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+.partner-item:hover img {
+    filter: grayscale(0%);
+}
+.partner-text-logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+.partner-item:hover .partner-text-logo {
+    color: #0f172a;
+}
+
+/* ===================== BEASISWA CARDS ===================== */
+.beasiswa-card {
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    padding: 36px 30px;
+    height: 100%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-align: center;
+}
+.beasiswa-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+.beasiswa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    border-color: transparent;
+}
+.beasiswa-card:hover::before {
+    transform: scaleX(1);
+}
+.beasiswa-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: #f8fafc;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+.beasiswa-card:hover .beasiswa-icon {
+    background: var(--primary);
+    color: #ffffff !important;
+    transform: scale(1.1) rotate(-5deg);
+}
+.beasiswa-card h5 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+.beasiswa-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 340px;
+}
+.beasiswa-card .mt-auto {
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* ===================== MODAL PREMIUM ===================== */
+.custom-premium-modal .modal-content {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+.custom-premium-modal .modal-header {
+    padding: 24px;
+    border-bottom: none;
+}
+.custom-premium-modal .header-blue {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+}
+.custom-premium-modal .header-green {
+    background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
+}
+.custom-premium-modal .header-orange {
+    background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
+}
+.custom-premium-modal .modal-icon-bg {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.benefit-list {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px;
+}
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.benefit-check {
+    font-size: 1.25rem;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+/* ===================== PRODI CARD ===================== */
+.prodi-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.prodi-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
+}
+
+/* ===================== SEGMENTED CONTROL ALUR ===================== */
+.alur-segmented-control {
+    display: inline-flex;
+    background: #f1f5f9;
+    padding: 6px;
+    border-radius: 50px;
+    gap: 4px;
+}
+.asc-btn {
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 32px;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+.asc-btn:hover {
+    color: #0f172a;
+}
+.asc-btn.active {
+    background: #ffffff;
+    color: var(--primary);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.alur-content-container {
+    transition: all 0.4s ease;
+}
+
+/* ===================== LAYOUT SPACING ===================== */
+.section-clean {
+    padding: 100px 0;
+}
+@media (max-width: 768px) {
+    .section-clean {
+        padding: 60px 0;
+    }
+}
+
+/* ===================== NEW JALUR ===================== */
+.section-label {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+.section-title {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+}
+.section-divider {
+    width: 60px;
+    height: 4px;
+    background: #2563eb;
+    border-radius: 2px;
+}
+/* ===================== PRODI CARDS UNIV ===================== */
+.prodi-card-univ {
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.prodi-card-univ:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08) !important;
+    border-color: #2563eb !important;
+}
+
+.jalur-new-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 40px 30px;
+    height: 100%;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.jalur-new-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    border-color: #cbd5e1;
+}
+.jalur-new-card--featured {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    border: none;
+    box-shadow: 0 20px 40px rgba(37,99,235,0.2);
+}
+.jalur-new-card--featured:hover {
+    box-shadow: 0 30px 50px rgba(37,99,235,0.3);
+    border-color: transparent;
+}
+.jalur-new-badge {
+    position: absolute;
+    top: -12px;
+    right: 30px;
+    background: #f59e0b;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(245,158,11,0.3);
+}
+.jalur-new-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+}
+.jalur-new-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+.jalur-new-tag {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+.jalur-new-desc {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.jalur-new-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+.jalur-new-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: #334155;
+    line-height: 1.5;
+}
+.jalur-new-list li i {
+    color: #10b981;
+    font-size: 1.1rem;
+    margin-top: -2px;
+}
+.jalur-new-list--light li {
+    color: rgba(255,255,255,0.9);
+}
+.jalur-new-list--light li i {
+    color: #fcd34d;
+}
+.jalur-new-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px;
+    background: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+.jalur-new-btn:hover {
+    background: #2563eb;
+    color: #fff;
+}
+.jalur-new-btn--light {
+    background: #fff;
+    color: #1e3a8a;
+}
+.jalur-new-btn--light:hover {
+    background: #fcd34d;
+    color: #1e3a8a;
+}
+
+/* ===================== BEASISWA BAR ===================== */
+.beasiswa-bar {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 100px;
+    padding: 12px 12px 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+.beasiswa-bar-icon {
+    color: #f59e0b;
+    font-size: 1.5rem;
+}
+.beasiswa-bar-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.beasiswa-bar-text strong {
+    color: #0f172a;
+    font-size: 1rem;
+}
+.beasiswa-bar-text span {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+.beasiswa-bar-btn {
+    background: #fcd34d;
+    color: #92400e;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.beasiswa-bar-btn:hover {
+    background: #f59e0b;
+    color: #fff;
+}
+@media (max-width: 992px) {
+    .beasiswa-bar {
+        flex-direction: column;
+        border-radius: 24px;
+        padding: 24px;
+        text-align: center;
+    }
+    .beasiswa-bar-text {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .beasiswa-bar-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* ===================== ALUR PENDAFTARAN (FLOW) ===================== */
+.reg-flow { position: relative; padding: 100px 0; }
+.rf-track {
+    position: absolute; top: 50%; left: 60px; right: 60px;
+    height: 3px; background: #e2e8f0; border-radius: 99px;
+    transform: translateY(-50%);
+}
+.rf-track-fill {
+    height: 100%; background: var(--accent); border-radius: 99px;
+    width: 0%; transition: width 0.6s ease;
+}
+.rf-vehicle {
+    position: absolute; top: 50%; left: 0%;
+    transform: translate(-50%, -50%);
+    width: 40px; height: 40px; background: var(--accent);
+    border-radius: 50%; border: 3px solid #fff;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1rem; z-index: 10;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+    transition: left 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.rf-steps {
+    display: flex; justify-content: space-between;
+    align-items: center; position: relative; z-index: 2;
+}
+.rf-step {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; cursor: pointer;
+    position: relative;
+}
+.rf-step-node { display: flex; flex-direction: column; align-items: center; }
+.rf-node-circle {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: #fff; border: 3px solid #e2e8f0;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1rem; color: #94a3b8;
+    transition: all 0.3s ease; z-index: 3; position: relative;
+}
+.rf-step--active .rf-node-circle, .rf-step:hover .rf-node-circle {
+    background: var(--accent); border-color: var(--accent);
+    color: #fff; box-shadow: 0 0 0 6px rgba(37,99,235,0.15);
+}
+.rf-step-content {
+    position: absolute; width: 180px; text-align: center;
+}
+.rf-content--below { top: calc(100% + 16px); }
+.rf-content--above { bottom: calc(100% + 16px); }
+.rf-step-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: #f1f5f9; color: #64748b;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; margin: 0 auto 10px;
+    transition: all 0.3s ease;
+}
+.rf-step--active .rf-step-icon, .rf-step:hover .rf-step-icon {
+    background: #eff6ff; color: var(--accent);
+}
+.rf-step-title { font-size: 0.82rem; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.rf-step-desc { font-size: 0.72rem; color: #94a3b8; line-height: 1.5; margin: 0; }
+
+/* Mobile vertical flow */
+.vflow { display: flex; flex-direction: column; gap: 0; }
+.vf-item { display: flex; gap: 16px; }
+.vf-left { display: flex; flex-direction: column; align-items: center; }
+.vf-circle {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 0.9rem; flex-shrink: 0;
+}
+.vf-line { width: 2px; flex: 1; background: #e2e8f0; margin: 8px auto; min-height: 32px; }
+.vf-body { padding-bottom: 32px; }
+.vf-title { font-weight: 700; color: #0f172a; font-size: 0.95rem; margin-bottom: 4px; }
+.vf-desc { color: #64748b; font-size: 0.85rem; line-height: 1.6; margin: 0; }
+
+/* ===================== NEWS CARDS ===================== */
+.news-clean-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #f1f5f9; transition: all 0.25s; }
+.news-clean-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+.ncc-visual {
+    aspect-ratio: 1 / 1.414; /* A4 Poster Proportion */
+    width: 100%; position: relative;
+    display: flex; align-items: flex-start; padding: 16px;
+    background-color: #f1f5f9;
+}
+.ncc-category { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; background: var(--primary); color: #fff; padding: 6px 12px; border-radius: 99px; text-transform: uppercase; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+.ncc-body { padding: 20px; }
+.ncc-date { font-size: 0.78rem; color: #94a3b8; margin-bottom: 8px; }
+.ncc-title { font-size: 0.98rem; font-weight: 700; color: #0f172a; line-height: 1.4; margin-bottom: 8px; }
+.ncc-excerpt { font-size: 0.85rem; color: #64748b; line-height: 1.6; margin-bottom: 16px; }
+.ncc-link { font-size: 0.85rem; font-weight: 600; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s; }
+.ncc-link:hover { gap: 10px; }
+
+/* News Filter */
+.news-filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.nft-btn {
+    padding: 8px 16px; border-radius: 99px;
+    border: 1px solid #e2e8f0; background: #fff;
+    font-size: 0.82rem; font-weight: 600; color: #64748b;
+    cursor: pointer; transition: all 0.2s;
+}
+.nft-btn:hover, .nft-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+
+/* ===================== FEE SECTION ===================== */
+.fee-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.fee-list li { display: flex; align-items: center; gap: 12px; color: #334155; font-weight: 500; font-size: 0.95rem; }
+.fee-list li i { color: #059669; font-size: 1.1rem; flex-shrink: 0; }
+.fee-card { background: #f8fafc; border: 1px solid #f1f5f9; border-radius: 20px; padding: 32px; }
+.fc-title { font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+.fc-sub { color: #94a3b8; font-size: 0.85rem; margin-bottom: 24px; }
+.fc-rows { display: flex; flex-direction: column; gap: 0; }
+.fc-row { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #f1f5f9; }
+.fc-row span { color: #64748b; font-size: 0.9rem; }
+.fc-row strong { color: #0f172a; font-size: 0.9rem; }
+.fc-total { display: flex; justify-content: space-between; align-items: center; background: var(--primary); color: #fff; padding: 16px 20px; border-radius: 12px; margin-top: 20px; }
+.fc-total span { font-weight: 600; font-size: 0.9rem; }
+.fc-total strong { font-size: 1.2rem; font-weight: 800; }
+
+/* ===================== FAQ ===================== */
+.faq-btn { font-weight: 600; font-size: 0.93rem; color: #0f172a; padding: 16px 20px; }
+.faq-btn:not(.collapsed) { color: var(--accent); background: #eff6ff; }
+.faq-body { color: #64748b; font-size: 0.9rem; line-height: 1.8; padding: 4px 20px 20px; }
+.faq-item { box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+
+/* ===================== CTA SECTION ===================== */
+.cta-section { background: var(--primary); padding: 100px 0; }
+.cta-inner { text-align: center; max-width: 640px; margin: 0 auto; }
+.cta-inner h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; letter-spacing: -0.02em; margin-bottom: 16px; }
+.cta-inner p { color: rgba(255,255,255,0.6); font-size: 1.05rem; line-height: 1.7; margin-bottom: 40px; }
+.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.cta-btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff; color: var(--primary);
+    font-weight: 700; font-size: 0.95rem;
+    padding: 14px 28px; border-radius: 10px;
+    text-decoration: none; transition: all 0.25s ease;
+}
+.cta-btn-primary:hover { background: #f1f5f9; transform: translateY(-2px); }
+.cta-btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: rgba(255,255,255,0.85);
+    font-weight: 600; font-size: 0.95rem;
+    padding: 14px 28px; border-radius: 10px;
+    text-decoration: none; border: 2px solid rgba(255,255,255,0.25);
+    transition: all 0.25s ease;
+}
+.cta-btn-secondary:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+</style>
+    </head>
+    <body>
+        
+
+        <header class="site-header" id="siteHeader">
+            <nav class="navbar navbar-expand-lg py-0">
+                <div class="container">
+                    <a class="navbar-brand d-flex align-items-center gap-3" href="http://127.0.0.1:8000">
+                        <img src="http://127.0.0.1:8000/images/logo-rosma.png" alt="Logo STMIK ROSMA" class="nav-logo">
+                        <div class="lh-sm">
+                            <div class="brand-name mb-0">STMIK ROSMA</div>
+                            <small class="brand-sub">PENERIMAAN MAHASISWA BARU</small>
+                        </div>
+                    </a>
+                    <button class="navbar-toggler border-0 px-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainNav">
+                        <ul class="navbar-nav mx-auto gap-lg-4">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle px-3 rounded-pill transition-all" href="#" role="button" data-bs-toggle="dropdown">Informasi PMB</a>
+                                <ul class="dropdown-menu border-0 shadow-lg mt-2 rounded-4 p-2">
+                                    <li><a class="dropdown-item rounded-3 py-2 fw-semibold" href="http://127.0.0.1:8000#informasi"><i class="bi bi-info-circle me-2 text-primary"></i>Tentang PMB</a></li>
+                                    <li><a class="dropdown-item rounded-3 py-2 fw-semibold" href="http://127.0.0.1:8000#gelombang"><i class="bi bi-calendar3 me-2 text-primary"></i>Gelombang Pendaftaran</a></li>
+                                    <li><a class="dropdown-item rounded-3 py-2 fw-semibold" href="http://127.0.0.1:8000#jalur"><i class="bi bi-signpost-2 me-2 text-primary"></i>Jalur Masuk</a></li>
+                                    <li><a class="dropdown-item rounded-3 py-2 fw-semibold" href="http://127.0.0.1:8000#tahapan"><i class="bi bi-list-ol me-2 text-primary"></i>Alur Pendaftaran</a></li>
+                                    <li><a class="dropdown-item rounded-3 py-2 fw-semibold" href="http://127.0.0.1:8000#faq"><i class="bi bi-question-circle me-2 text-primary"></i>Bantuan (FAQ)</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link px-3 rounded-pill transition-all" href="http://127.0.0.1:8000/program-studi">Program Studi</a></li>
+                            <li class="nav-item"><a class="nav-link px-3 rounded-pill transition-all" href="http://127.0.0.1:8000/biaya-kuliah">Biaya Pendidikan</a></li>
+                            <li class="nav-item"><a class="nav-link px-3 rounded-pill transition-all" href="http://127.0.0.1:8000#berita">Pengumuman</a></li>
+                        </ul>
+                        <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+                                                            <a href="http://127.0.0.1:8000/login" class="btn btn-outline-primary btn-sm px-4 fw-bold rounded-pill">Login</a>
+                                <a href="http://127.0.0.1:8000/pendaftaran" class="btn btn-primary btn-sm px-4 fw-bold rounded-pill shadow-sm"><i class="bi bi-pencil-square me-1"></i> Daftar Sekarang</a>
+                                                    </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            
+
+<div id="heroBannerCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6500">
+    <div class="carousel-indicators">
+            </div>
+
+    <div class="carousel-inner">
+                    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroBannerCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroBannerCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+
+<section class="rosma-about-section position-relative py-5" id="informasi">
+    <div class="container py-4">
+        <div class="row align-items-center g-5 mb-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-light border text-primary fw-bold small mb-3">
+                    <i class="bi bi-bank2"></i> PROFIL INSTITUSI
+                </div>
+                <h2 class="display-6 fw-bold text-dark mb-4" style="line-height: 1.25;">
+                    Pusat Pendidikan Teknologi & Komputer Terpercaya di <span class="text-primary position-relative d-inline-block">Karawang</span>
+                </h2>
+                <p class="text-muted lead fs-6 mb-4" style="line-height: 1.8;">
+                    <strong>STMIK ROSMA</strong> (Sekolah Tinggi Manajemen Informatika dan Komputer Rosma) hadir sejak puluhan tahun mencetak ribuan tenaga profesional bidang Rekayasa Perangkat Lunak, Manajemen Sistem, dan Akuntansi Digital untuk memenuhi kebutuhan industri modern di Kawasan Industri terbesar se-Asia Tenggara, Karawang.
+                </p>
+                <div class="row g-3 mb-4">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-3 p-3 rounded-4 bg-white border shadow-sm stat-item-box">
+                            <div class="stat-icon-wrap bg-primary text-white">
+                                <i class="bi bi-shield-check fs-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="fw-bold text-dark mb-0">Terakreditasi</h4>
+                                <small class="text-muted">Resmi LAM-INFOKOM</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-3 p-3 rounded-4 bg-white border shadow-sm stat-item-box">
+                            <div class="stat-icon-wrap bg-success text-white">
+                                <i class="bi bi-buildings-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="fw-bold text-dark mb-0">50+ Mitra</h4>
+                                <small class="text-muted">Kawasan Industri Karawang</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex gap-3 align-items-center flex-wrap">
+                    <a href="http://127.0.0.1:8000/program-studi" class="btn btn-primary px-4 py-2 rounded-pill fw-bold shadow-sm">
+                        <i class="bi bi-mortarboard me-2"></i>Lihat Program Studi
+                    </a>
+                    <a href="http://127.0.0.1:8000/biaya-kuliah" class="btn btn-outline-secondary px-4 py-2 rounded-pill fw-bold">
+                        <i class="bi bi-wallet2 me-2"></i>Rincian Biaya Kuliah
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="about-visual-grid position-relative">
+                    <div class="grid-img-main rounded-4 overflow-hidden shadow border position-relative">
+                        <img src="http://127.0.0.1:8000/images/student-almamater.jpg" alt="Mahasiswa STMIK ROSMA" class="w-100 img-fluid" style="height:420px; object-fit:cover; object-position:top center;">
+                        <div class="img-badge-overlay">
+                            <span class="badge bg-white text-dark px-3 py-2 rounded-pill fw-bold shadow">
+                                <i class="bi bi-geo-alt-fill text-danger me-1"></i> Jl. Kertabumi No. 62, Karawang
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="row g-4 pt-2">
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-pillar-card h-100 p-4 rounded-4 bg-white border shadow-sm">
+                    <div class="pillar-icon bg-primary-subtle text-primary mb-3">
+                        <i class="bi bi-code-slash fs-3"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark mb-2">Kurikulum Terapan</h5>
+                    <p class="text-muted small mb-0">Fokus pada keahlian praktis Software Engineering, Web, Mobile, Data, dan Jaringan yang langsung terpakai di tempat kerja.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-pillar-card h-100 p-4 rounded-4 bg-white border shadow-sm">
+                    <div class="pillar-icon bg-success-subtle text-success mb-3">
+                        <i class="bi bi-clock-history fs-3"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark mb-2">Kelas Karyawan (Malam/Sabtu)</h5>
+                    <p class="text-muted small mb-0">Pilihan jadwal kuliah malam dan weekend yang cocok bagi pekerja industri dan fresh graduate.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-pillar-card h-100 p-4 rounded-4 bg-white border shadow-sm">
+                    <div class="pillar-icon bg-warning-subtle text-warning mb-3">
+                        <i class="bi bi-cash-coin fs-3"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark mb-2">Cicilan Terjangkau</h5>
+                    <p class="text-muted small mb-0">Biaya kuliah dapat diangsur setiap bulan tanpa memberatkan, serta opsi beasiswa KIP & Yayasan.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-pillar-card h-100 p-4 rounded-4 bg-white border shadow-sm">
+                    <div class="pillar-icon bg-info-subtle text-info mb-3">
+                        <i class="bi bi-briefcase fs-3"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark mb-2">Jejaring Karir Industri</h5>
+                    <p class="text-muted small mb-0">Kerja sama penyaluran kerja dan magang dengan puluhan perusahaan terkemuka di kawasan industri Karawang.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="section-clean" id="prodi" style="background:#f8fafc;">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-primary-subtle text-primary fw-bold small mb-2">
+                <i class="bi bi-mortarboard-fill"></i> PROGRAM SARJANA & DIPLOMA
+            </span>
+            <h2 class="fw-bold text-dark mt-2" style="font-size:2.2rem; letter-spacing:-0.02em;">Program Studi Unggulan</h2>
+            <p class="text-muted mt-2 mx-auto" style="max-width:580px; font-size:.95rem;">
+                Seluruh program studi telah terakreditasi resmi oleh Lembaga Akreditasi Mandiri Informatika dan Komputer (LAM-INFOKOM).
+            </p>
+        </div>
+        <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="prodi-card-univ h-100 d-flex flex-column bg-white rounded-4 border shadow-sm p-4 position-relative">
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-primary px-3 py-1 rounded-pill fw-bold" style="font-size:0.75rem;">
+                            Sarjana (S1)
+                        </span>
+                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 rounded-pill fw-semibold" style="font-size:0.75rem;">
+                            <i class="bi bi-patch-check-fill me-1"></i>Akreditasi A
+                        </span>
+                    </div>
+
+                    
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="prodi-icon-box rounded-3 d-flex align-items-center justify-content-center" style="width:48px; height:48px; background:#1e40af15; color:#1e40af; font-size:1.4rem;">
+                            <i class="bi bi-code-square"></i>
+                        </div>
+                        <div>
+                            <span class="text-muted small d-block fw-semibold" style="font-size:0.72rem; letter-spacing:0.5px;">KODE: TI</span>
+                            <h5 class="fw-bold text-dark mb-0" style="font-size:1.1rem; line-height:1.3;">Teknik Informatika</h5>
+                        </div>
+                    </div>
+
+                    
+                    <p class="text-muted flex-grow-1 mb-3" style="font-size:0.875rem; line-height:1.65;">
+                        Program studi unggulan dengan kurikulum yang relevan dengan kebutuhan industri digital.
+                    </p>
+
+                    
+                    <div class="prodi-sk-box p-2 rounded-3 bg-light border mb-3" style="font-size:0.75rem;">
+                        <div class="d-flex align-items-center justify-content-between text-muted">
+                            <span><i class="bi bi-shield-check text-primary me-1"></i>SK Akreditasi:</span>
+                            <strong class="text-dark">Terdaftar Resmi</strong>
+                        </div>
+                                            </div>
+
+                    
+                    <div class="pt-2 border-top d-flex align-items-center justify-content-between mt-auto">
+                        <a href="http://127.0.0.1:8000/program-studi/teknik-informatika" class="fw-bold text-primary text-decoration-none small d-inline-flex align-items-center gap-1">
+                            Detail Kurikulum <i class="bi bi-chevron-right" style="font-size:0.75rem;"></i>
+                        </a>
+                        <a href="http://127.0.0.1:8000/pendaftaran?program_study_id=1" class="btn btn-sm btn-outline-primary rounded-pill px-3 fw-semibold" style="font-size:0.78rem;">
+                            Daftar
+                        </a>
+                    </div>
+                </div>
+            </div>
+                                    <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="prodi-card-univ h-100 d-flex flex-column bg-white rounded-4 border shadow-sm p-4 position-relative">
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-primary px-3 py-1 rounded-pill fw-bold" style="font-size:0.75rem;">
+                            Sarjana (S1)
+                        </span>
+                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 rounded-pill fw-semibold" style="font-size:0.75rem;">
+                            <i class="bi bi-patch-check-fill me-1"></i>Akreditasi A
+                        </span>
+                    </div>
+
+                    
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="prodi-icon-box rounded-3 d-flex align-items-center justify-content-center" style="width:48px; height:48px; background:#0284c715; color:#0284c7; font-size:1.4rem;">
+                            <i class="bi bi-diagram-3-fill"></i>
+                        </div>
+                        <div>
+                            <span class="text-muted small d-block fw-semibold" style="font-size:0.72rem; letter-spacing:0.5px;">KODE: SI</span>
+                            <h5 class="fw-bold text-dark mb-0" style="font-size:1.1rem; line-height:1.3;">Sistem Informasi</h5>
+                        </div>
+                    </div>
+
+                    
+                    <p class="text-muted flex-grow-1 mb-3" style="font-size:0.875rem; line-height:1.65;">
+                        Program studi unggulan dengan kurikulum yang relevan dengan kebutuhan industri digital.
+                    </p>
+
+                    
+                    <div class="prodi-sk-box p-2 rounded-3 bg-light border mb-3" style="font-size:0.75rem;">
+                        <div class="d-flex align-items-center justify-content-between text-muted">
+                            <span><i class="bi bi-shield-check text-primary me-1"></i>SK Akreditasi:</span>
+                            <strong class="text-dark">Terdaftar Resmi</strong>
+                        </div>
+                                            </div>
+
+                    
+                    <div class="pt-2 border-top d-flex align-items-center justify-content-between mt-auto">
+                        <a href="http://127.0.0.1:8000/program-studi/sistem-informasi" class="fw-bold text-primary text-decoration-none small d-inline-flex align-items-center gap-1">
+                            Detail Kurikulum <i class="bi bi-chevron-right" style="font-size:0.75rem;"></i>
+                        </a>
+                        <a href="http://127.0.0.1:8000/pendaftaran?program_study_id=2" class="btn btn-sm btn-outline-primary rounded-pill px-3 fw-semibold" style="font-size:0.78rem;">
+                            Daftar
+                        </a>
+                    </div>
+                </div>
+            </div>
+                                    <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="prodi-card-univ h-100 d-flex flex-column bg-white rounded-4 border shadow-sm p-4 position-relative">
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold" style="font-size:0.75rem;">
+                            Diploma (D3)
+                        </span>
+                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 rounded-pill fw-semibold" style="font-size:0.75rem;">
+                            <i class="bi bi-patch-check-fill me-1"></i>Akreditasi B
+                        </span>
+                    </div>
+
+                    
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="prodi-icon-box rounded-3 d-flex align-items-center justify-content-center" style="width:48px; height:48px; background:#6d28d915; color:#6d28d9; font-size:1.4rem;">
+                            <i class="bi bi-laptop-fill"></i>
+                        </div>
+                        <div>
+                            <span class="text-muted small d-block fw-semibold" style="font-size:0.72rem; letter-spacing:0.5px;">KODE: MI</span>
+                            <h5 class="fw-bold text-dark mb-0" style="font-size:1.1rem; line-height:1.3;">Manajemen Informatika</h5>
+                        </div>
+                    </div>
+
+                    
+                    <p class="text-muted flex-grow-1 mb-3" style="font-size:0.875rem; line-height:1.65;">
+                        Program studi unggulan dengan kurikulum yang relevan dengan kebutuhan industri digital.
+                    </p>
+
+                    
+                    <div class="prodi-sk-box p-2 rounded-3 bg-light border mb-3" style="font-size:0.75rem;">
+                        <div class="d-flex align-items-center justify-content-between text-muted">
+                            <span><i class="bi bi-shield-check text-primary me-1"></i>SK Akreditasi:</span>
+                            <strong class="text-dark">Terdaftar Resmi</strong>
+                        </div>
+                                            </div>
+
+                    
+                    <div class="pt-2 border-top d-flex align-items-center justify-content-between mt-auto">
+                        <a href="http://127.0.0.1:8000/program-studi/manajemen-informatika" class="fw-bold text-primary text-decoration-none small d-inline-flex align-items-center gap-1">
+                            Detail Kurikulum <i class="bi bi-chevron-right" style="font-size:0.75rem;"></i>
+                        </a>
+                        <a href="http://127.0.0.1:8000/pendaftaran?program_study_id=3" class="btn btn-sm btn-outline-primary rounded-pill px-3 fw-semibold" style="font-size:0.78rem;">
+                            Daftar
+                        </a>
+                    </div>
+                </div>
+            </div>
+                                    <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="prodi-card-univ h-100 d-flex flex-column bg-white rounded-4 border shadow-sm p-4 position-relative">
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold" style="font-size:0.75rem;">
+                            Diploma (D3)
+                        </span>
+                        <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 rounded-pill fw-semibold" style="font-size:0.75rem;">
+                            <i class="bi bi-patch-check-fill me-1"></i>Akreditasi B
+                        </span>
+                    </div>
+
+                    
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="prodi-icon-box rounded-3 d-flex align-items-center justify-content-center" style="width:48px; height:48px; background:#04785715; color:#047857; font-size:1.4rem;">
+                            <i class="bi bi-calculator-fill"></i>
+                        </div>
+                        <div>
+                            <span class="text-muted small d-block fw-semibold" style="font-size:0.72rem; letter-spacing:0.5px;">KODE: KA</span>
+                            <h5 class="fw-bold text-dark mb-0" style="font-size:1.1rem; line-height:1.3;">Komputerisasi Akuntansi</h5>
+                        </div>
+                    </div>
+
+                    
+                    <p class="text-muted flex-grow-1 mb-3" style="font-size:0.875rem; line-height:1.65;">
+                        Program studi unggulan dengan kurikulum yang relevan dengan kebutuhan industri digital.
+                    </p>
+
+                    
+                    <div class="prodi-sk-box p-2 rounded-3 bg-light border mb-3" style="font-size:0.75rem;">
+                        <div class="d-flex align-items-center justify-content-between text-muted">
+                            <span><i class="bi bi-shield-check text-primary me-1"></i>SK Akreditasi:</span>
+                            <strong class="text-dark">Terdaftar Resmi</strong>
+                        </div>
+                                            </div>
+
+                    
+                    <div class="pt-2 border-top d-flex align-items-center justify-content-between mt-auto">
+                        <a href="http://127.0.0.1:8000/program-studi/komputerisasi-akuntansi" class="fw-bold text-primary text-decoration-none small d-inline-flex align-items-center gap-1">
+                            Detail Kurikulum <i class="bi bi-chevron-right" style="font-size:0.75rem;"></i>
+                        </a>
+                        <a href="http://127.0.0.1:8000/pendaftaran?program_study_id=4" class="btn btn-sm btn-outline-primary rounded-pill px-3 fw-semibold" style="font-size:0.78rem;">
+                            Daftar
+                        </a>
+                    </div>
+                </div>
+            </div>
+                    </div>
+        
+        <div class="text-center mt-4">
+            <a href="http://127.0.0.1:8000/program-studi" class="btn btn-light border px-4 py-2 rounded-pill fw-bold text-dark shadow-sm">
+                <i class="bi bi-table me-2 text-primary"></i>Lihat Tabel Akreditasi Lengkap Semua Prodi
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-5" id="gelombang" style="background: #ffffff; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9;">
+    <div class="container py-3">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-light border text-primary fw-bold small mb-2">
+                <i class="bi bi-calendar3"></i> JADWAL PMB 2026/2027
+            </span>
+            <h2 class="fw-bold text-dark mt-2" style="font-size:2.2rem; letter-spacing:-0.02em;">Gelombang Pendaftaran</h2>
+            <p class="text-muted mt-2 mx-auto" style="max-width:560px; font-size:.95rem;">
+                Daftarkan diri Anda lebih awal untuk mendapatkan kemudahan proses seleksi dan kuota beasiswa prioritas.
+            </p>
+        </div>
+
+        <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="col-lg-4 col-md-6">
+                <div class="card h-100 rounded-4 border border-primary border-2 shadow-md bg-white overflow-hidden position-relative">
+                                        <div class="bg-primary text-white text-center py-1 fw-bold small" style="font-size:0.75rem; letter-spacing:0.5px;">
+                        <i class="bi bi-star-fill text-warning me-1"></i> SEDANG DIBUKA SAAT INI
+                    </div>
+                                        <div class="p-4 d-flex flex-column h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="fw-bold text-dark mb-0" style="font-size:1.25rem;">Gelombang 1</h5>
+                                                            <span class="badge bg-success-subtle text-success px-3 py-1 rounded-pill fw-bold">Aktif</span>
+                                                    </div>
+
+                        <div class="p-3 rounded-3 bg-light border mb-4">
+                            <div class="d-flex align-items-center gap-2 text-muted mb-2 small">
+                                <i class="bi bi-calendar-event text-primary"></i>
+                                <span>Periode Pendaftaran:</span>
+                            </div>
+                            <div class="fw-bold text-dark" style="font-size:0.95rem;">
+                                01 Jan 2026 &mdash; 31 Mar 2026
+                            </div>
+                        </div>
+
+                        <p class="text-muted small mb-4 flex-grow-1" style="line-height:1.6;">
+                            Pendaftaran calon mahasiswa baru untuk seluruh program studi Diploma (D3) dan Sarjana (S1).
+                        </p>
+
+                        <div class="mt-auto">
+                                                            <a href="http://127.0.0.1:8000/pendaftaran" class="btn btn-primary w-100 rounded-pill py-2 fw-bold shadow-sm">
+                                    Daftar di Gelombang Ini <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                    <div class="col-lg-4 col-md-6">
+                <div class="card h-100 rounded-4 border shadow-sm bg-white overflow-hidden position-relative">
+                                        <div class="p-4 d-flex flex-column h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="fw-bold text-dark mb-0" style="font-size:1.25rem;">Gelombang 2</h5>
+                                                            <span class="badge bg-secondary-subtle text-secondary px-3 py-1 rounded-pill fw-normal">Akan Datang</span>
+                                                    </div>
+
+                        <div class="p-3 rounded-3 bg-light border mb-4">
+                            <div class="d-flex align-items-center gap-2 text-muted mb-2 small">
+                                <i class="bi bi-calendar-event text-primary"></i>
+                                <span>Periode Pendaftaran:</span>
+                            </div>
+                            <div class="fw-bold text-dark" style="font-size:0.95rem;">
+                                01 Apr 2026 &mdash; 30 Jun 2026
+                            </div>
+                        </div>
+
+                        <p class="text-muted small mb-4 flex-grow-1" style="line-height:1.6;">
+                            Pendaftaran calon mahasiswa baru untuk seluruh program studi Diploma (D3) dan Sarjana (S1).
+                        </p>
+
+                        <div class="mt-auto">
+                                                            <button class="btn btn-light border text-muted w-100 rounded-pill py-2 fw-semibold" disabled>
+                                    Segera Dibuka
+                                </button>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                    </div>
+    </div>
+</section>
+
+
+<section class="section-clean" id="jalur" style="background:#fff;">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-label">Jalur Penerimaan</span>
+            <h2 class="section-title">Jalur Masuk Kuliah</h2>
+            <div class="section-divider mx-auto"></div>
+            <p class="text-muted mt-4 mx-auto" style="max-width:580px;">Kami membuka tiga jalur penerimaan yang fleksibel untuk menyambut calon mahasiswa dari berbagai latar belakang.</p>
+        </div>
+
+        <div class="row g-4" data-aos="fade-up" data-aos-delay="100">
+            <!-- Jalur Reguler -->
+            <div class="col-lg-4">
+                <div class="jalur-new-card">
+                    <div class="jalur-new-icon" style="background:#eff6ff;">
+                        <i class="bi bi-mortarboard-fill" style="color:#2563eb;"></i>
+                    </div>
+                    <h5 class="jalur-new-title">Jalur Reguler</h5>
+                    <p class="jalur-new-tag">SMA / SMK / Sederajat</p>
+                    <p class="jalur-new-desc">Untuk lulusan SMA/SMK sederajat yang ingin kuliah. Waktu kuliah fleksibel, tersedia pilihan kelas pagi dan malam.</p>
+                    <ul class="jalur-new-list">
+                        <li><i class="bi bi-check2"></i> Tersedia berbagai Beasiswa</li>
+                        <li><i class="bi bi-check2"></i> Detail beasiswa dijelaskan lebih lanjut</li>
+                        <li><i class="bi bi-check2"></i> Jadwal kuliah fleksibel (Pagi/Malam)</li>
+                        <li><i class="bi bi-check2"></i> Kurikulum berbasis industri</li>
+                    </ul>
+                    <a href="http://127.0.0.1:8000/pendaftaran" class="jalur-new-btn">Daftar Sekarang <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Jalur Ekstensi -->
+            <div class="col-lg-4">
+                <div class="jalur-new-card jalur-new-card--featured">
+                    <span class="jalur-new-badge">Paling Diminati</span>
+                    <div class="jalur-new-icon" style="background:rgba(255,255,255,0.15);">
+                        <i class="bi bi-briefcase-fill" style="color:#fff;"></i>
+                    </div>
+                    <h5 class="jalur-new-title" style="color:#fff;">Jalur Ekstensi</h5>
+                    <p class="jalur-new-tag" style="color:rgba(255,255,255,0.7);">Kelas Karyawan (Hybrid)</p>
+                    <p class="jalur-new-desc" style="color:rgba(255,255,255,0.85);">Untuk Anda yang sudah bekerja namun ingin melanjutkan studi dengan sistem pembelajaran Hybrid (Online dan Offline).</p>
+                    <ul class="jalur-new-list jalur-new-list--light">
+                        <li><i class="bi bi-check2"></i> Sistem kuliah Hybrid (Online & Offline)</li>
+                        <li><i class="bi bi-check2"></i> Jadwal menyesuaikan waktu kerja</li>
+                        <li><i class="bi bi-check2"></i> Cicilan biaya per bulan</li>
+                        <li><i class="bi bi-check2"></i> Fasilitas E-Learning mandiri</li>
+                    </ul>
+                    <a href="http://127.0.0.1:8000/pendaftaran" class="jalur-new-btn jalur-new-btn--light">Daftar Sekarang <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Jalur RPL -->
+            <div class="col-lg-4">
+                <div class="jalur-new-card">
+                    <div class="jalur-new-icon" style="background:#f0fdf4;">
+                        <i class="bi bi-award-fill" style="color:#16a34a;"></i>
+                    </div>
+                    <h5 class="jalur-new-title">Jalur RPL</h5>
+                    <p class="jalur-new-tag">Rekognisi Pengalaman Kerja</p>
+                    <p class="jalur-new-desc">Untuk Anda yang memiliki pengalaman kerja atau pernah berhenti kuliah dan ingin melanjutkan studi kembali.</p>
+                    <ul class="jalur-new-list">
+                        <li><i class="bi bi-check2"></i> Konversi pengalaman kerja jadi SKS</li>
+                        <li><i class="bi bi-check2"></i> Melanjutkan sisa studi sebelumnya</li>
+                        <li><i class="bi bi-check2"></i> Masa studi lebih singkat</li>
+                        <li><i class="bi bi-check2"></i> Beban biaya lebih efisien</li>
+                    </ul>
+                    <a href="http://127.0.0.1:8000/pendaftaran" class="jalur-new-btn">Daftar Sekarang <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="text-center mt-5 mb-4" data-aos="fade-up">
+            <h3 class="fw-bold text-dark mb-2">Beasiswa yang Tersedia</h3>
+            <p class="text-muted">Kami menyediakan berbagai skema beasiswa untuk mendukung perjalanan akademik Anda.</p>
+        </div>
+
+        <div class="row g-4 mb-5 justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <!-- KIP Kuliah -->
+            <div class="col-md-5">
+                <div class="beasiswa-card h-100 d-flex flex-column">
+                    <div class="mb-3">
+                        <h5 class="mb-0 fw-bold" style="color:#1d4ed8;">KIP Kuliah</h5>
+                        <small class="text-muted">Kartu Indonesia Pintar</small>
+                    </div>
+                    <p class="mb-4">Program bantuan biaya pendidikan dari pemerintah untuk mahasiswa berprestasi yang berasal dari keluarga tidak mampu secara ekonomi.</p>
+                    <div class="mt-auto">
+                        <button class="btn btn-sm btn-outline-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#modalKip">Lihat Selengkapnya <i class="bi bi-arrow-right ms-1"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- YAPEROS -->
+            <div class="col-md-5">
+                <div class="beasiswa-card h-100 d-flex flex-column">
+                    <div class="mb-3">
+                        <h5 class="mb-0 fw-bold" style="color:#b45309;">Beasiswa YAPEROS</h5>
+                        <small class="text-muted">Yayasan Pendidikan Rosma</small>
+                    </div>
+                    <p class="mb-4">Beasiswa dari Yayasan Pendidikan Rosma sebagai apresiasi bagi calon mahasiswa berprestasi di bidang akademik maupun non-akademik.</p>
+                    <div class="mt-auto">
+                        <button class="btn btn-sm btn-outline-warning rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#modalYaperos">Lihat Selengkapnya <i class="bi bi-arrow-right ms-1"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MODAL KIP -->
+<div class="modal fade" id="modalKip" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow" style="border-radius: 20px; overflow: hidden;">
+            <div class="modal-body p-0">
+                <div class="row g-0">
+                    <div class="col-md-5 d-none d-md-block" style="background: linear-gradient(135deg, #1d4ed8, #2563eb); position: relative;">
+                        <div class="p-5 d-flex flex-column justify-content-center h-100 text-white">
+                            <h3 class="fw-bold mb-3">KIP Kuliah</h3>
+                            <p class="mb-0" style="font-size: 1.05rem; opacity: 0.9;">Program Beasiswa dari Pemerintah Republik Indonesia untuk mahasiswa berprestasi.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-7 position-relative">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-4 shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="p-5">
+                            <div class="d-md-none mb-4 pb-4 border-bottom">
+                                <h4 class="fw-bold text-primary mb-1">KIP Kuliah</h4>
+                                <p class="text-muted small mb-0">Program Beasiswa Pemerintah RI</p>
+                            </div>
+                            
+                            <h5 class="fw-bold text-dark mb-3">Manfaat Utama Beasiswa:</h5>
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="me-3 mt-1 text-primary"><i class="bi bi-check-circle-fill fs-5"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Kuliah Gratis Sepenuhnya</h6>
+                                    <p class="text-muted small mb-0">Biaya pendidikan ditanggung secara penuh dari awal pendaftaran hingga Anda dinyatakan lulus studi.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="me-3 mt-1 text-success"><i class="bi bi-check-circle-fill fs-5"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Bantuan Biaya Hidup</h6>
+                                    <p class="text-muted small mb-0">Mendapatkan bantuan uang saku atau biaya hidup yang dicairkan per semester selama masa perkuliahan.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="p-3 mb-4 rounded" style="background-color: #f8fafc; border-left: 3px solid #3b82f6;">
+                                <h6 class="fw-bold mb-1" style="font-size: 0.9rem;">Persyaratan Resmi</h6>
+                                <p class="text-muted mb-0" style="font-size: 0.85rem; line-height: 1.6;">
+                                    Silakan cek langsung pada situs web resmi KIP Kuliah Kemdikbud untuk mengetahui informasi dan persyaratan pendaftaran terbaru.
+                                </p>
+                            </div>
+                            
+                            <a href="https://kip-kuliah.kemdikbud.go.id/" target="_blank" class="btn btn-primary w-100 rounded-pill fw-semibold py-2">
+                                Cek Selengkapnya <i class="bi bi-box-arrow-up-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL YAPEROS -->
+<div class="modal fade" id="modalYaperos" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow" style="border-radius: 20px; overflow: hidden;">
+            <div class="modal-body p-0">
+                <div class="row g-0">
+                    <div class="col-md-5 d-none d-md-block" style="background: linear-gradient(135deg, #d97706, #f59e0b); position: relative;">
+                        <div class="p-5 d-flex flex-column justify-content-center h-100 text-white">
+                            <h3 class="fw-bold mb-3">Beasiswa YAPEROS</h3>
+                            <p class="mb-0" style="font-size: 1.05rem; opacity: 0.9;">Beasiswa eksklusif dari Yayasan Pendidikan Rosma sebagai bentuk apresiasi prestasi Anda.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-7 position-relative">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-4 shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="p-5">
+                            <div class="d-md-none mb-4 pb-4 border-bottom">
+                                <h4 class="fw-bold text-warning mb-1">Beasiswa YAPEROS</h4>
+                                <p class="text-muted small mb-0">Dari Yayasan Pendidikan Rosma</p>
+                            </div>
+                            
+                            <p class="text-muted mb-4" style="font-size: 0.95rem; line-height: 1.6;">
+                                Beasiswa ini adalah program apresiasi langsung dari <span class="fw-bold text-dark">Yayasan Pendidikan Rosma</span>. Ditujukan kepada calon mahasiswa terpilih sebagai dukungan komprehensif terhadap kemajuan generasi bangsa.
+                            </p>
+                            
+                            <h5 class="fw-bold text-dark mb-3">Keuntungan Program:</h5>
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="me-3 mt-1 text-warning"><i class="bi bi-dash-circle-fill fs-5"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Bebas Registrasi Awal</h6>
+                                    <p class="text-muted small mb-0">Mendapatkan potongan atau pembebasan beban biaya registrasi pendaftaran.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="me-3 mt-1 text-warning"><i class="bi bi-dash-circle-fill fs-5"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Keringanan UKT</h6>
+                                    <p class="text-muted small mb-0">Keringanan eksklusif untuk kewajiban pembayaran Uang Kuliah Tunggal (UKT).</p>
+                                </div>
+                            </div>
+                            
+                            <h5 class="fw-bold text-dark mb-2 mt-2">Syarat Utama:</h5>
+                            <ul class="text-muted small mb-0" style="line-height: 1.8; padding-left: 1.2rem;">
+                                <li>Pendaftar mahasiswa baru program S1 atau D3 STMIK Rosma.</li>
+                                <li>Memiliki prestasi unggul di bidang akademik (nilai rapor rata-rata sangat baik) atau non-akademik (juara perlombaan daerah/nasional).</li>
+                                <li>Sanggup melampirkan salinan bukti fisik prestasi pendukung.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="section-clean bg-white" id="tahapan">
+    <div class="container text-center">
+        <h2 class="section-title mb-2">Alur Pendaftaran</h2>
+        <div style="width: 60px; height: 4px; background: var(--primary); margin: 10px auto 20px; border-radius: 2px;"></div>
+        <p class="text-muted mb-5">Pilih jalur pendaftaran di bawah ini untuk melihat prosedur pendaftaran secara detail.</p>
+
+        <h5 class="fw-bold mb-4" style="color: #475569;">Pilih Jalur Masuk Anda</h5>
+        <div class="d-flex justify-content-center mb-5">
+            <div class="alur-segmented-control" id="alurSelector">
+                <button class="asc-btn active" data-tab-target="#alur-reguler" onclick="switchAlur(this, 'alur-reguler')">Reguler</button>
+                <button class="asc-btn" data-tab-target="#alur-ekstensi" onclick="switchAlur(this, 'alur-ekstensi')">Ekstensi (Hybrid)</button>
+                <button class="asc-btn" data-tab-target="#alur-rpl" onclick="switchAlur(this, 'alur-rpl')">RPL (Rekognisi Pembelajaran Lampau)</button>
+            </div>
+        </div>
+
+        <div class="alur-content-container mx-auto" style="max-width: 800px; background: #f8fafc; padding: 40px; border-radius: 20px; border: 1px solid #e2e8f0;">
+            <!-- Reguler -->
+            <div class="alur-content active" id="alur-reguler">
+                <div class="row g-4 position-relative text-start">
+                    <div class="col-md-3">
+                        <div class="bg-white rounded-3 p-3 text-center h-100 shadow-sm">
+                            <div class="fs-2 text-primary mb-2"><i class="bi bi-globe"></i></div>
+                            <div class="small fw-bold">Buka situs pmb.rosma.ac.id</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="bg-white rounded-3 p-3 text-center h-100 shadow-sm">
+                            <div class="fs-2 text-primary mb-2"><i class="bi bi-cursor-fill"></i></div>
+                            <div class="small fw-bold">Cek menu daftar</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="bg-white rounded-3 p-3 text-center h-100 shadow-sm">
+                            <div class="fs-2 text-primary mb-2"><i class="bi bi-file-earmark-text-fill"></i></div>
+                            <div class="small fw-bold">Isi formulir pendaftaran</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="bg-white rounded-3 p-3 text-center h-100 shadow-sm">
+                            <div class="fs-2 text-primary mb-2"><i class="bi bi-headset"></i></div>
+                            <div class="small fw-bold">Nanti akan dihubungi lebih lanjut oleh tim marketing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ekstensi -->
+            <div class="alur-content d-none" id="alur-ekstensi">
+                <div class="row g-4 position-relative text-start">
+                    <div class="col-md-3">
+                        <div class="bg-white rounded-3 p-3 text-center h-100 shadow-sm border-bottom border-warning border-3">
+                            <div class="fs-2 text-warning mb-2"><i class="bi bi-globe"></i></div>
+                            <div class="small fw-bold">Buka situs pmb.rosma.ac.id</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="bg-white rounded-3 p-3 text-center h-100 shadow-sm border-bottom border-warning border-3">
+                            <div class="fs-2 text-warning mb-2"><i class="bi bi-cursor-fill"></i></div>
+                            <div class="small fw-bold">Cek menu daftar</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="bg-white rounded-3 p-3 text-center h-100 shadow-sm border-bottom border-warning border-3">
+                            <div class="fs-2 text-warning mb-2"><i class="bi bi-file-earmark-text-fill"></i></div>
+                            <div class="small fw-bold">Isi formulir pendaftaran</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="bg-white rounded-3 p-3 text-center h-100 shadow-sm border-bottom border-warning border-3">
+                            <div class="fs-2 text-warning mb-2"><i class="bi bi-headset"></i></div>
+                            <div class="small fw-bold">Nanti akan dihubungi lebih lanjut oleh tim marketing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RPL -->
+            <div class="alur-content d-none" id="alur-rpl">
+                <div class="row g-4 position-relative text-start">
+                    <div class="col-md-3">
+                        <div class="bg-white rounded-3 p-3 text-center h-100 shadow-sm border-bottom border-success border-3">
+                            <div class="fs-2 text-success mb-2"><i class="bi bi-globe"></i></div>
+                            <div class="small fw-bold">Buka situs pmb.rosma.ac.id</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="bg-white rounded-3 p-3 text-center h-100 shadow-sm border-bottom border-success border-3">
+                            <div class="fs-2 text-success mb-2"><i class="bi bi-cursor-fill"></i></div>
+                            <div class="small fw-bold">Cek menu daftar</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="bg-white rounded-3 p-3 text-center h-100 shadow-sm border-bottom border-success border-3">
+                            <div class="fs-2 text-success mb-2"><i class="bi bi-file-earmark-text-fill"></i></div>
+                            <div class="small fw-bold">Isi formulir pendaftaran</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="bg-white rounded-3 p-3 text-center h-100 shadow-sm border-bottom border-success border-3">
+                            <div class="fs-2 text-success mb-2"><i class="bi bi-headset"></i></div>
+                            <div class="small fw-bold">Nanti akan dihubungi lebih lanjut oleh tim marketing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-clean bg-light-gray" id="kegiatan">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-5" data-aos="fade-up">
+            <div class="section-header mb-0 text-start">
+                <h2 class="mb-1">Berita & Kegiatan</h2>
+                <p class="mb-0">Informasi terkini seputar STMIK ROSMA.</p>
+            </div>
+            <div class="news-filter-tabs" id="newsFilterTabs" data-aos="fade-up">
+                <button class="nft-btn active" data-filter="semua">Semua</button>
+                <button class="nft-btn" data-filter="Pengumuman">Pengumuman</button>
+                <button class="nft-btn" data-filter="Kegiatan">Kegiatan</button>
+                <button class="nft-btn" data-filter="Prestasi">Prestasi</button>
+            </div>
+        </div>
+        <div class="row g-4" id="newsGrid" data-aos="fade-up" data-aos-delay="100">
+                            <div class="col-lg-4 col-md-6 news-card-wrapper" data-category="Berita">
+                    <div class="news-clean-card">
+                        <div class="ncc-visual ncc-visual--primary" style="background-image: url(''); background-size: cover; background-position: top center;">
+                                                            <div style="position:absolute; inset:0; background:linear-gradient(135deg, var(--primary), var(--accent)); opacity:0.8;"></div>
+                                                        <span class="ncc-category" style="position:relative; z-index:2;">Berita</span>
+                        </div>
+                        <div class="ncc-body">
+                            <div class="ncc-date">01 Sep 2026</div>
+                            <h5 class="ncc-title">Persyaratan PMB 2026/2027 Diperbarui</h5>
+                            <p class="ncc-excerpt">Informasi terbaru mengenai persyaratan dokumen PMB telah diperbarui. Pastikan calon mahasi...</p>
+                            <a href="#" class="ncc-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col-lg-4 col-md-6 news-card-wrapper" data-category="Berita">
+                    <div class="news-clean-card">
+                        <div class="ncc-visual ncc-visual--primary" style="background-image: url(''); background-size: cover; background-position: top center;">
+                                                            <div style="position:absolute; inset:0; background:linear-gradient(135deg, var(--primary), var(--accent)); opacity:0.8;"></div>
+                                                        <span class="ncc-category" style="position:relative; z-index:2;">Berita</span>
+                        </div>
+                        <div class="ncc-body">
+                            <div class="ncc-date">12 Aug 2026</div>
+                            <h5 class="ncc-title">Jadwal Pendaftaran Gelombang 2 Sudah Dibuka</h5>
+                            <p class="ncc-excerpt">Gelombang 2 penerimaan mahasiswa baru dibuka mulai bulan April 2026. Calon mahasiswa dapat...</p>
+                            <a href="#" class="ncc-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col-lg-4 col-md-6 news-card-wrapper" data-category="Berita">
+                    <div class="news-clean-card">
+                        <div class="ncc-visual ncc-visual--primary" style="background-image: url(''); background-size: cover; background-position: top center;">
+                                                            <div style="position:absolute; inset:0; background:linear-gradient(135deg, var(--primary), var(--accent)); opacity:0.8;"></div>
+                                                        <span class="ncc-category" style="position:relative; z-index:2;">Berita</span>
+                        </div>
+                        <div class="ncc-body">
+                            <div class="ncc-date">18 Jul 2026</div>
+                            <h5 class="ncc-title">Kegiatan Campus Day STMIK ROSMA</h5>
+                            <p class="ncc-excerpt">STMIK ROSMA menyelenggarakan campus day sebagai ajang pengenalan program studi dan lingkun...</p>
+                            <a href="#" class="ncc-link">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+        <div id="noNewsResult" class="text-center py-5 d-none">
+            <p class="text-muted">Tidak ada berita dalam kategori ini.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-clean bg-white">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="section-header text-start mb-4">
+                    <h2 class="mb-2">Biaya Pendidikan</h2>
+                    <p class="mb-0">Transparan, kompetitif, tanpa biaya tersembunyi.</p>
+                </div>
+                <ul class="fee-list">
+                    <li><i class="bi bi-check-circle-fill"></i> Biaya fleksibel berdasarkan gelombang pendaftaran</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Potongan khusus jalur prestasi & beasiswa</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Pembayaran dapat dilakukan secara bertahap</li>
+                </ul>
+                <a href="http://127.0.0.1:8000/biaya-kuliah" class="btn-hero-primary mt-4 d-inline-flex">
+                    Lihat Rincian Biaya
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+                </a>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="fee-card">
+                    <h5 class="fc-title">Simulasi Biaya Awal</h5>
+                                        <p class="fc-sub">
+                        Teknik Informatika &mdash;
+                        <span style="color:#f59e0b;font-weight:700;">
+                            <i class="bi bi-star-fill" style="font-size:.65rem;"></i>                             Gelombang 1
+                        </span>
+                    </p>
+                    <div class="fc-rows">
+                                                                                    <div class="fc-row">
+                                    <span>Tahap 2</span>
+                                    <strong>Rp 2.500.000</strong>
+                                </div>
+                                                            <div class="fc-row">
+                                    <span>Tahap 3</span>
+                                    <strong>Rp 3.500.000</strong>
+                                </div>
+                                                                        </div>
+                    <div class="fc-total">
+                        <span>Estimasi Awal Masuk</span>
+                        <strong>Rp 6.000.000</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-clean bg-light-gray" id="faq">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <h2 class="fw-bold text-dark">Pertanyaan Umum</h2>
+                    <div style="width: 60px; height: 4px; background: var(--primary); margin: 10px auto 20px; border-radius: 2px;"></div>
+                    <p class="text-muted">Jawaban atas pertanyaan yang paling sering diajukan.</p>
+                </div>
+                
+                <div class="accordion accordion-flush" id="faqAccordion" data-aos="fade-up" data-aos-delay="100">
+                                            <div class="accordion-item faq-item border-0 mb-3 bg-white rounded-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button faq-btn rounded-3  shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1">
+                                    Apakah pendaftaran bisa dilakukan secara online?
+                                </button>
+                            </h2>
+                            <div id="faq-1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body faq-body">Ya, seluruh proses pendaftaran dapat dilakukan secara online melalui platform PMB STMIK ROSMA.</div>
+                            </div>
+                        </div>
+                                            <div class="accordion-item faq-item border-0 mb-3 bg-white rounded-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button faq-btn rounded-3 collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2">
+                                    Bagaimana cara mengecek status pendaftaran?
+                                </button>
+                            </h2>
+                            <div id="faq-2" class="accordion-collapse collapse " data-bs-parent="#faqAccordion">
+                                <div class="accordion-body faq-body">Anda dapat login ke akun calon mahasiswa dan masuk ke halaman dashboard untuk melihat status pendaftaran.</div>
+                            </div>
+                        </div>
+                                            <div class="accordion-item faq-item border-0 mb-3 bg-white rounded-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button faq-btn rounded-3 collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3">
+                                    Apakah terdapat jalur beasiswa?
+                                </button>
+                            </h2>
+                            <div id="faq-3" class="accordion-collapse collapse " data-bs-parent="#faqAccordion">
+                                <div class="accordion-body faq-body">Ya, STMIK ROSMA menyediakan jalur beasiswa dan prestasi sesuai ketentuan yang berlaku.</div>
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-inner" data-aos="fade-up">
+            <h2>Siap Memulai?</h2>
+            <p>Daftarkan dirimu sekarang dan wujudkan karir teknologi impianmu bersama STMIK ROSMA.</p>
+            <div class="cta-btns">
+                <a href="http://127.0.0.1:8000/pendaftaran" class="cta-btn-primary">Daftar Online Sekarang</a>
+                <a href="https://wa.me/6281234567890" target="_blank" class="cta-btn-secondary">
+                    <i class="bi bi-whatsapp me-2"></i> Tanya via WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row g-5">
+                        <div class="col-lg-5 pe-lg-5">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="http://127.0.0.1:8000/images/logo-rosma.png" alt="Logo STMIK ROSMA" style="width:60px;height:60px;object-fit:contain;">
+                                <div class="lh-sm">
+                                    <div class="footer-brand-name">STMIK ROSMA</div>
+                                    <small class="footer-brand-sub">PENERIMAAN MAHASISWA BARU</small>
+                                </div>
+                            </div>
+                            <p class="footer-desc">
+                                Sistem Penerimaan Mahasiswa Baru STMIK ROSMA. Kami berkomitmen mencetak generasi digital yang inovatif dan siap bersaing di era teknologi modern.
+                            </p>
+                            <div class="d-flex gap-2 mt-4">
+                                <a href="#" class="footer-social"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="footer-social"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="footer-social"><i class="bi bi-youtube"></i></a>
+                                <a href="#" class="footer-social"><i class="bi bi-tiktok"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <h6 class="footer-heading">Tautan Penting</h6>
+                            <ul class="footer-links">
+                                <li><a href="http://127.0.0.1:8000/program-studi"><i class="bi bi-chevron-right"></i> Program Studi</a></li>
+                                <li><a href="http://127.0.0.1:8000/biaya-kuliah"><i class="bi bi-chevron-right"></i> Informasi Biaya</a></li>
+                                <li><a href="http://127.0.0.1:8000#jalur"><i class="bi bi-chevron-right"></i> Jalur Penerimaan</a></li>
+                                <li><a href="http://127.0.0.1:8000#tahapan"><i class="bi bi-chevron-right"></i> Alur Pendaftaran</a></li>
+                                <li><a href="http://127.0.0.1:8000#faq"><i class="bi bi-chevron-right"></i> Pusat Bantuan</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                            <h6 class="footer-heading">Hubungi Kami</h6>
+                            <ul class="footer-contact">
+                                <li>
+                                    <i class="bi bi-building"></i>
+                                    <span>STMIK ROSMA<br>Jl. Parahiyangan, Adiarsa Bar., Kec. Karawang Bar., Karawang, Jawa Barat 41311</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-whatsapp"></i>
+                                    <span>6281234567890<br><small>(Hanya Chat WhatsApp)</small></span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-envelope"></i>
+                                    <span>pmb@rosma.ac.id</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container text-center">
+                    <span>&copy; 2026 STMIK ROSMA &mdash; Sekolah Tinggi Manajemen Informatika dan Komputer. Hak Cipta Dilindungi.</span>
+                </div>
+            </div>
+        </footer>
+
+                <a href="https://wa.me/6281234567890?text=Halo+Admin+PMB+STMIK+ROSMA%2C+saya+ingin+mendapatkan+informasi+mengenai+pendaftaran+mahasiswa+baru." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat dengan Admin PMB" style="padding: 1rem; justify-content: center; width: 60px; height: 60px;">
+            <i class="bi bi-whatsapp" style="margin: 0;"></i>
+        </a>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- AOS Animation JS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({ duration: 900, once: true, offset: 80, easing: 'ease-out-cubic' });
+
+            // Sticky header scroll effect
+            const header = document.getElementById('siteHeader');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Animated counter
+            function animateCounter(el) {
+                const target = parseInt(el.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) { current = target; clearInterval(timer); }
+                    el.textContent = Math.floor(current).toLocaleString('id-ID');
+                }, 16);
+            }
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); counterObserver.unobserve(e.target); } });
+            }, { threshold: 0.5 });
+            document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+        </script>
+        <script>
+    // ========== NEWS FILTER ==========
+    document.querySelectorAll('.nft-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.nft-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.dataset.filter;
+            let anyVisible = false;
+            document.querySelectorAll('.news-card-wrapper').forEach(card => {
+                const match = filter === 'semua' || card.dataset.category === filter;
+                card.style.display = match ? '' : 'none';
+                if (match) anyVisible = true;
+            });
+            document.getElementById('noNewsResult').classList.toggle('d-none', anyVisible);
+        });
+    });
+
+    // (Dihapus script registration flow zigzag karena menggunakan UI statis yang baru)
+    function switchAlur(btn, targetId) {
+        document.querySelectorAll('#alurSelector button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        document.querySelectorAll('.alur-content').forEach(content => {
+            content.classList.remove('active', 'd-block');
+            content.classList.add('d-none');
+        });
+        
+        const target = document.getElementById(targetId);
+        target.classList.remove('d-none');
+        target.classList.add('active', 'd-block');
+    }
+
+    // AOS init
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof AOS !== 'undefined') AOS.refresh();
+    });
+</script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js');
+                });
+            }
+        </script>
+    </body>
+</html>
+
