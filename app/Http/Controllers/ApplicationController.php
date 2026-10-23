@@ -80,9 +80,29 @@ class ApplicationController extends Controller
             'program_study_2_id.different' => 'Pilihan Program Studi 2 tidak boleh sama dengan Pilihan 1.'
         ]);
 
-        $user = Auth::user();
+        $authUser = Auth::user();
         
-        if (!$user) {
+        // JIKA ADMIN SEDANG LOGIN: Jangan ubah akun admin! Cari atau buat akun user khusus untuk calon mahasiswa
+        if ($authUser && $authUser->role === 'admin') {
+            $user = User::where('email', $validated['email'])->first();
+            if (!$user) {
+                $user = User::create([
+                    'name' => $validated['full_name'],
+                    'email' => $validated['email'],
+                    'password' => Hash::make($validated['phone']),
+                    'phone' => $validated['phone'],
+                    'role' => 'user'
+                ]);
+            }
+        } elseif ($authUser) {
+            // User biasa yang sedang login
+            $user = $authUser;
+            $user->update([
+                'name' => $validated['full_name'],
+                'phone' => $validated['phone'],
+            ]);
+        } else {
+            // Pengunjung umum (guest) yang mendaftar
             $user = User::where('email', $validated['email'])->first();
             if (!$user) {
                 $user = User::create([
@@ -94,12 +114,6 @@ class ApplicationController extends Controller
                 ]);
             }
             Auth::login($user);
-        } else {
-            $user->update([
-                'name' => $validated['full_name'],
-                'email' => $validated['email'],
-                'phone' => $validated['phone'],
-            ]);
         }
 
         $formData = $validated;
@@ -134,6 +148,10 @@ class ApplicationController extends Controller
         }
 
         session()->forget('captcha_answer');
+
+        if ($authUser && $authUser->role === 'admin') {
+            return redirect()->route('admin.applicants.index')->with('success', 'Pendaftaran calon mahasiswa baru berhasil ditambahkan.');
+        }
 
         return redirect()->route('dashboard')->with('success', 'Formulir pendaftaran berhasil dikirim. Email konfirmasi dan link cek status telah dikirimkan ke alamat email Anda.');
     }
